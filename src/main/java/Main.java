@@ -1,3 +1,5 @@
+import pl.edu.agh.hangman.Hangman;
+import pl.edu.agh.hangman.WordRandomizer;
 import pl.edu.agh.hangman.WordsFileReader;
 
 import java.io.FileNotFoundException;
@@ -5,14 +7,16 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException{
-        String word = wordRandomizer();
-        System.out.println(word);
-    }
+        int failsCounter = 0;
+        String word = new WordRandomizer().wordRandomizer();
+        String wordState = new String(new char[word.length()]).replace('\0', '_');
+        String[] hangmanState = Hangman.HANGMANPICS;
 
-    private static String wordRandomizer()  throws FileNotFoundException {
-        WordsFileReader fileReader = new WordsFileReader();
-        ArrayList<String> words = fileReader.readFile("src/main/resources/slowa.txt");
-        int randomNumber = (int)(Math.random() * words.size());
-        return words.get(randomNumber).toUpperCase();
+        while(failsCounter < 6){
+            System.out.println(hangmanState[0]);
+        }
+
+        System.out.println(word);
+        System.out.println(wordState);
     }
 }
