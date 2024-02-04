@@ -56,9 +56,5 @@ public class Hangman {
     };
 
     public static void main(String[] args) {
-        InputHandler inputHandler = new InputHandler();
-        String letter = inputHandler.scanLetter();
-        System.out.println("You entered: " + letter);
-
     }
 }

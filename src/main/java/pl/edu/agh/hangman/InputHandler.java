@@ -5,8 +5,7 @@ public class InputHandler {
     private Scanner scanner;
 
     public InputHandler () {
-        this.scanner = new
-                Scanner(System.in);
+        this.scanner = new Scanner(System.in);
     }
 
     public String scanLetter() {
@@ -18,7 +17,7 @@ public class InputHandler {
             input = scanner.nextLine();
         }
 
-        return input;
+        return input.toUpperCase();
     }
 
 }
