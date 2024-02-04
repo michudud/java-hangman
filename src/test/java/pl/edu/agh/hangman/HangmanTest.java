@@ -8,4 +8,7 @@ public class HangmanTest {
     public void testThatTestsNothing() {
         Assert.assertTrue("You need to implement it!", false);
     }
+
+    public static class WordChecker {
+    }
 }
