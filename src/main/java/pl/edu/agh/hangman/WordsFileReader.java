@@ -9,12 +9,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class WordsFileReader {
-    private static ArrayList<String> readFile(String filepath) throws FileNotFoundException {
-        File poemFile = new File(filepath);
-        Scanner scanner = new Scanner(poemFile);
+    public ArrayList<String> readFile(String filepath) throws FileNotFoundException {
+        File wordsFile = new File(filepath);
+        Scanner scanner = new Scanner(wordsFile);
         ArrayList<String> words = new ArrayList<>();
 
-        try (BufferedReader reader = Files.newBufferedReader(poemFile.toPath())) {
+        try (BufferedReader reader = Files.newBufferedReader(wordsFile.toPath())) {
             String line = null;
             while ((line = reader.readLine()) != null) {
                 words.add(line);
